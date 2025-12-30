@@ -40,7 +40,7 @@ function ServiceDetails() {
       setLoading(true);
       try {
         // Construct the nested API URL exactly as provided
-        const res = await fetch(`http://localhost:3000/api/pages/services/${serviceId}`);
+        const res = await fetch(`${API_BASE}/api/pages/services/${serviceId}`);
         const json = await res.json();
 
         if (json.data?.sections) {

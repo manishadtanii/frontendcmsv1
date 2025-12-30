@@ -35,7 +35,7 @@ function Service() {
     const fetchData = async () => {
       try {
         // Retrieve data for the main Services page
-        const res = await fetch('http://localhost:3000/api/pages/services');
+        const res = await fetch(`${API_BASE}/api/pages/services`);
         const json = await res.json();
         if (json.data?.sections) {
           const dataMap = {};

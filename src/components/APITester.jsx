@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { testConnection, authAPI, pageAPI } from '../services/apiService';
+import { API_BASE } from '../services/apiConfig';
 
 export default function APITester() {
   const [connectionStatus, setConnectionStatus] = useState(null);
@@ -116,7 +117,7 @@ export default function APITester() {
         fontFamily: 'monospace',
         fontSize: '12px',
       }}>
-        <p>📍 Backend URL: <strong>http://localhost:3000/api</strong></p>
+        <p>📍 Backend URL: <strong>{API_BASE}/api</strong></p>
         <p>✅ Check Console (F12) for detailed API logs</p>
       </div>
     </div>

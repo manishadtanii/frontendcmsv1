@@ -35,7 +35,7 @@ function Contact() {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/pages/contact'); //
+        const res = await fetch(`${API_BASE}/api/pages/contact`); //
         const json = await res.json();
         if (json.data?.sections) {
           const dataMap = {};

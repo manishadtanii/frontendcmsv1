@@ -38,7 +38,7 @@ function About() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/pages/about'); //
+        const res = await fetch(`${API_BASE}/api/pages/about`); //
         const json = await res.json();
         if (json.data?.sections) {
           // Map sections into a key-value object (e.g., { hero: {...}, mission: {...} })
