@@ -1,6 +1,6 @@
 // API Service - Frontend to Backend Communication
 
-export const API_BASE_URL = import.meta.env.VITE_FRONTEND_URL || import.meta.env.VITE_API_BASE || import.meta.env.VITE_BACKEND_URL || 'https://backendcms-oi8n.onrender.com';
+export const API_BASE_URL = import.meta.env.VITE_FRONTEND_URL || import.meta.env.VITE_API_BASE || import.meta.env.VITE_BACKEND_URL || 'https://backendcms-oi8n.onrender.com/api';
 
 // page slug endpoints
 export const pageAPI = {
