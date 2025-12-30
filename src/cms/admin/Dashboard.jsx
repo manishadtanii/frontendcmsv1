@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import DynamicEditor from "../components/DynamicEditor";
 import toast, { Toaster } from 'react-hot-toast';
+import { API_BASE_URL } from "../../services/apiService";
 
 const Dashboard = () => {
   // PERSISTENCE: Initialize state from localStorage to keep sidebar selection
@@ -28,7 +29,7 @@ const Dashboard = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editContact, setEditContact] = useState(null);
 
-  const BASE_URL = `${API_BASE}/api/pages`; 
+  const BASE_URL = `${API_BASE_URL}/pages`; 
 
   const PAGE_PATHS = [
     "home", "about", "services", "contact",
@@ -95,7 +96,7 @@ const Dashboard = () => {
   const fetchContactsList = async () => {
     setContactsLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/contacts?limit=200`);
+      const res = await fetch(`${API_BASE_URL}/contacts?limit=200`);
       const json = await res.json();
       if (json.data && json.data.contacts) setContacts(json.data.contacts);
     } catch (err) {
@@ -117,7 +118,7 @@ const Dashboard = () => {
 
   const fetchUsersList = async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/admin/users`);
+      const res = await fetch(`${API_BASE_URL}/admin/users`);
       const json = await res.json();
       if (json.data) setUsers(json.data);
     } catch (err) {
@@ -138,7 +139,7 @@ const Dashboard = () => {
   const handleDeleteContact = async (id) => {
     if (!confirm('Delete this contact?')) return;
     try {
-      const res = await fetch(`${API_BASE}/api/contacts/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${API_BASE_URL}/contacts/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setContacts(prev => prev.filter(c => c._id !== id));
         toast.success('Contact deleted');
@@ -151,7 +152,7 @@ const Dashboard = () => {
 
   const handleUpdateContactStatus = async (id, status) => {
     try {
-      const res = await fetch(`${API_BASE}/api/contacts/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/contacts/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status }),
@@ -198,7 +199,7 @@ const Dashboard = () => {
     };
 
     try {
-      const res = await fetch(`${API_BASE}/api/contacts/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/contacts/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ContactHero from '../sections/contact/ContactHero'
 import ContactUs from '../sections/contact/ContactUs'
 import useSmoothScroll from '../components/useSmoothScroll';
+import { API_BASE_URL } from "../services/apiService";
 
 function Contact() {
   useSmoothScroll(1000);
@@ -35,7 +36,7 @@ function Contact() {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/pages/contact`); //
+        const res = await fetch(`${API_BASE_URL}/pages/contact`); //
         const json = await res.json();
         if (json.data?.sections) {
           const dataMap = {};

@@ -375,7 +375,7 @@ import Select from "react-select";
 import Form from "./FormSubmit";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { API_BASE } from "../../services/apiConfig"; // backend host override
+import { API_BASE_URL } from "../../services/apiService";
 
 function FormSubmit() {
   
@@ -412,7 +412,7 @@ function FormSubmit() {
 
     try {
       // POST to our backend contact API
-      const response = await fetch("http://localhost:3000/api/contacts", {
+      const response = await fetch(`${API_BASE_URL}/contacts`, {
         method: "POST",
         body: formData,
       });

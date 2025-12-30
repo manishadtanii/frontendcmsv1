@@ -1,6 +1,6 @@
 // API Service - Frontend to Backend Communication
 
-const API_BASE_URL = 'https://backendcms-oi8n.onrender.com/api';
+export const API_BASE_URL = 'http://localhost:3000/api';
 
 // page slug endpoints
 export const pageAPI = {

@@ -6,6 +6,7 @@ import Story from '../sections/about/Story'
 import OurFounder from '../sections/about/OurFounder'
 import Team from '../sections/about/Team'
 import Testimonials from '../sections/home/Testimonials'
+import { API_BASE_URL } from "../services/apiService";
 
 function About() {
   const [sections, setSections] = useState({});
@@ -38,7 +39,7 @@ function About() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/pages/about`); //
+        const res = await fetch(`${API_BASE_URL}/pages/about`); //
         const json = await res.json();
         if (json.data?.sections) {
           // Map sections into a key-value object (e.g., { hero: {...}, mission: {...} })

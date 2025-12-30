@@ -5,6 +5,7 @@ import WhatWeProvide from "../sections/service-details/WhatWeProvide";
 import ServiceOverview from "../sections/service-details/ServiceOverview";
 import ServiceDetailsHero from "../sections/service-details/serviceDetailsHero";
 import Testimonials from "../sections/home/Testimonials";
+import { API_BASE_URL } from "../services/apiService";
 
 function ServiceDetails() {
   const { serviceId } = useParams(); // e.g., "tvg-management"
@@ -40,7 +41,7 @@ function ServiceDetails() {
       setLoading(true);
       try {
         // Construct the nested API URL exactly as provided
-        const res = await fetch(`${API_BASE}/api/pages/services/${serviceId}`);
+        const res = await fetch(`${API_BASE_URL}/pages/services/${serviceId}`);
         const json = await res.json();
 
         if (json.data?.sections) {

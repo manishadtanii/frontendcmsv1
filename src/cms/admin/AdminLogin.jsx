@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import Arrow from "../../components/Arrow";
-import { API_BASE } from '../../services/apiConfig';
+import { API_BASE_URL } from "../../services/apiService";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const AdminLogin = () => {
   const [timer, setTimer] = useState(0); 
   const [canResend, setCanResend] = useState(false);
 
-  const BASE_URL = `${API_BASE}/api`; 
+  const BASE_URL = API_BASE_URL;
 
   // --- TIMER LOGIC ---
   useEffect(() => {

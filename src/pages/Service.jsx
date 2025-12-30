@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ServiceHero from '../sections/service/ServiceHero'
 import ServicesGrid from '../sections/service/ServicesGrid'
 import Testimonials from '../sections/home/Testimonials'
+import { API_BASE_URL } from "../services/apiService";
 
 function Service() {
   const [sections, setSections] = useState({});
@@ -35,7 +36,7 @@ function Service() {
     const fetchData = async () => {
       try {
         // Retrieve data for the main Services page
-        const res = await fetch(`${API_BASE}/api/pages/services`);
+        const res = await fetch(`${API_BASE_URL}/pages/services`);
         const json = await res.json();
         if (json.data?.sections) {
           const dataMap = {};

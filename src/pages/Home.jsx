@@ -5,8 +5,7 @@ import Testimonials from "../sections/home/Testimonials";
 import SmartSlider from "../sections/home/SmartSlider";
 import WhyChoose from "../sections/home/WhyChoose";
 import HomeHero from "../sections/home/HomeHero";
-import { API_BASE } from "../services/apiConfig"; // use env-configured API base
-
+import { API_BASE_URL } from "../services/apiService";
 
 function Home() {
   const [sections, setSections] = useState([]);
@@ -15,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_BASE}/api/pages/home`);
+        const response = await fetch(`${API_BASE_URL}/pages/home`);
         const jsonData = await response.json();
         console.log("Fetched home data:", jsonData);
         if (jsonData.data && jsonData.data.sections) {
