@@ -78,7 +78,7 @@ function ServiceDetails() {
       <ServiceOver data={content.overview} />
       <WhatWeProvide data={content.provide} />
       <ServiceOverview data={content.tvgEffect} />
-      <Testimonials />
+      <Testimonials data={content.testimonials} />
     </div>
   );
 }
