@@ -49,6 +49,7 @@ const AdminLogin = () => {
       const response = await fetch(`${BASE_URL}/auth/admin/request-otp/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: 'include',
         body: JSON.stringify({ email: email }),
       });
 
@@ -73,6 +74,7 @@ const AdminLogin = () => {
       const response = await fetch(`${BASE_URL}/auth/admin/request-otp/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: 'include',
         body: JSON.stringify({ email: email }),
       });
       if (response.ok) {
@@ -94,6 +96,7 @@ const AdminLogin = () => {
       const response = await fetch(`${BASE_URL}/auth/admin/verify-otp/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: 'include',
         body: JSON.stringify({ email: email, otp: otp }),
       });
 
@@ -121,6 +124,7 @@ const AdminLogin = () => {
     try {
       const response = await fetch(`${BASE_URL}/auth/admin/login/`, {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${sessionToken}`,

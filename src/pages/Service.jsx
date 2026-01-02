@@ -61,7 +61,7 @@ function Service() {
         {/* Pass unboxed data props to each child component */}
         <ServiceHero data={sections["services-hero"]} />
         <ServicesGrid data={sections["services-grid"]} />
-        {/* <Testimonials data={sections.testimonials} /> */}
+        <Testimonials data={sections["testimonials"]} />
     </div>
   )
 }

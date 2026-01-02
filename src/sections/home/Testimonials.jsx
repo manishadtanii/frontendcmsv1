@@ -66,7 +66,10 @@ function PrevArrow(props) {
 const Testimonials = ({ data }) => {
     // console.log("Testimonial data:", data);
   if (!data) return null;
+  console.log("Testimonial data:", data);
   const { heading, cards } = data;
+  console.log("Testimonial cards:", cards);
+  console.log("Testimonial heading:", heading);
   const settings = {
     dots: false,
     infinite: true,
