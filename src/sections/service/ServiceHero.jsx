@@ -29,12 +29,10 @@ function ServiceHero({ data }) {
   
   if (!data) return null;
   console.log(data);
-  // console.log("Service Hero data:", data);
-  const {heading, description, Image, cta} = data['centerContent'];
-  console.log(cta);
-  console.log(heading);
-  console.log(description);
-  console.log(Image);
+  // console.log("ServiceHero data:", data);
+  const {Imagetop, Imagebottom,  centerContent} = data;
+  const {heading, description,  cta, } = centerContent;
+  console.log("ServiceHero data:", centerContent);
   return (
     <div className="service-hero">
       <div className="container-fluid">
@@ -71,14 +69,14 @@ function ServiceHero({ data }) {
             className="hero-left lg:order-1 lg:self-start"
             variants={leftVariants}
           >
-            <img src="s-hero-left.gif" className="w-full mt-10 sm:mt-auto" alt="" />
+            <img src={Imagetop['url']} className="w-full mt-10 sm:mt-auto" alt="" />
           </motion.div>
           {/* Right GIF */}
           <motion.div
             className="hero-left lg:order-3 lg:self-end"
             variants={rightVariants}
           >
-            <img src="s-hero-right.gif" className="w-full mt-10 sm:mt-auto" alt="" />
+            <img src={Imagebottom['url']} className="w-full mt-10 sm:mt-auto" alt="" />
           </motion.div>
         </motion.div>
       </div>

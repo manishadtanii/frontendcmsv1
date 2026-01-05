@@ -72,11 +72,12 @@ function App() {
           {/* Admin Login Route */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route
-            path="/admin/forgot-password"
+            path="/admin/change-password"
             element={
-              <ProtectedRoute>
                 <ForgotPassword />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+              //   <ForgotPassword />
+              // </ProtectedRoute>
             }
           />
           <Route path="/admin/reset-success" element={<ResetSuccess />} />

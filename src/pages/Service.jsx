@@ -38,6 +38,7 @@ function Service() {
         // Retrieve data for the main Services page
         const res = await fetch(`${API_BASE_URL}/pages/services`);
         const json = await res.json();
+        console.log("Fetched service page data:", json);
         if (json.data?.sections) {
           const dataMap = {};
           json.data.sections.forEach(s => {

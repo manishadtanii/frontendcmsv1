@@ -9,6 +9,7 @@ import { API_BASE_URL } from "../services/apiService";
 
 function ServiceDetails() {
   const { serviceId } = useParams(); // e.g., "tvg-management"
+  // console.log("Service ID from URL:", serviceId);
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -43,6 +44,8 @@ function ServiceDetails() {
         // Construct the nested API URL exactly as provided
         const res = await fetch(`${API_BASE_URL}/pages/services/${serviceId}`);
         const json = await res.json();
+
+        console.log("Fetched service details data:", json);
 
         if (json.data?.sections) {
           const dataMap = {};

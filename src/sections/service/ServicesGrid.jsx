@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const services = [
+/* const services = [
   {
     title: "TVG Management",
     content:
@@ -46,7 +46,7 @@ const services = [
     link: "/services/tvg-reporting",
     img: "./reporting.jpg",
   },
-];
+]; */
 /* const services = [
   {
     title: "TVG Management",
