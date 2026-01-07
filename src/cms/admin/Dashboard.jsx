@@ -276,18 +276,28 @@ const Dashboard = () => {
     if (showUsers) setShowUsers(false);
   }, [activePage, cmsData]);
 
-  const handleUpdateSection = async (updatedData) => {
+   const handleUpdateSection = async (updatedData) => {
     const formData = new FormData();
     const { id, imageFile, ...content } = updatedData;
 
     // Append individual fields for Multer
-    Object.keys(content).forEach((key) => {
-      const value =
-        typeof content[key] === "object" && content[key] !== null
-          ? JSON.stringify(content[key])
-          : content[key];
-      formData.append(key, value);
+    Object.keys(content).forEach(key => {
+      let value = content[key];
+
+      // ❌ block blob strings
+      if (typeof value === "string" && value.startsWith("blob:")) return;
+
+      // ❌ clean blob inside objects
+      if (typeof value === "object" && value !== null) {
+        const safe = JSON.stringify(value, (k, v) =>
+          typeof v === "string" && v.startsWith("blob:") ? undefined : v
+        );
+        formData.append(key, safe);
+      } else {
+        formData.append(key, value);
+      }
     });
+
 
     if (imageFile) {
       formData.append("imageFile", imageFile);
@@ -304,10 +314,12 @@ const Dashboard = () => {
       if (res.ok) {
         const responseData = await res.json();
 
+        console.log("Update response data:", responseData);
+
         // IMMEDIATE UI UPDATE
-        setCmsData((prev) => {
+        setCmsData(prev => {
           const pageData = [...(prev[activePage] || [])];
-          const idx = pageData.findIndex((s) => s.id === id);
+          const idx = pageData.findIndex(s => s.id === id);
           if (idx > -1) {
             pageData[idx] = { id, ...unboxData(responseData.data.content) };
           }
