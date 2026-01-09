@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const WhatWeProvide = ({ data }) => {
   if (!data) return null;
-  // console.log("WhatWeProvide data:", data);
+  console.log("WhatWeProvide data:", data);
   const { title, para, tagsLeft, tagsRight } = data;
 
   const fadeUpVariant = {

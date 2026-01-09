@@ -136,55 +136,55 @@ const ContactUs = ({ sectionData, onSave }) => {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Production Text</label>
-            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailSchedulingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailProductionText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Production Mail</label>
-            <input disabled={!isEditing} name="emailScheduling" value={content.emailScheduling} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailScheduling" value={content.emailProduction} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
            
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Invoicing Text</label>
-            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailSchedulingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailInvoicingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Invoicing Mail</label>
-            <input disabled={!isEditing} name="emailScheduling" value={content.emailScheduling} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailScheduling" value={content.emailInvoicing} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
            
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Video Text</label>
-            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailSchedulingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailVideoText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Video Mail</label>
-            <input disabled={!isEditing} name="emailScheduling" value={content.emailScheduling} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailScheduling" value={content.emailVideo} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
            
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Marketing Text</label>
-            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailSchedulingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailMarketingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">Marketing Mail</label>
-            <input disabled={!isEditing} name="emailScheduling" value={content.emailScheduling} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailScheduling" value={content.emailMarketing} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
            
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">General Inquiries Text</label>
-            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailSchedulingText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailSchedulingText" value={content.emailGeneralText} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
             <div className="flex flex-col gap-1">
             <label className="text-[10px] text-gray-500 font-bold uppercase ml-1">General Inquiries Mail</label>
-            <input disabled={!isEditing} name="emailScheduling" value={content.emailScheduling} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
+            <input disabled={!isEditing} name="emailScheduling" value={content.emailGeneral} placeholder="" onChange={handleChange} className={`w-full bg-transparent border rounded-xl px-4 py-2 outline-none transition-all ${isEditing ? 'border-cyan-400' : 'border-gray-800 text-gray-400'}`} />
             </div>
            
           </div>
@@ -201,63 +201,6 @@ const ContactUs = ({ sectionData, onSave }) => {
       </div>
 
       {/* --- HARDCODED CARDS (2x2) --- */}
-      <div className="">
-          <h1 className="mb-3">What Sets Us Apart</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* CARD 1 */}
-        <div className={`bg-[#0b1318] border rounded-2xl p-5 flex gap-5 ${isEditing ? 'border-cyan-400/30' : 'border-gray-800'}`}>
-          <div className="relative w-28 h-28 flex-shrink-0 bg-black rounded-xl overflow-hidden group">
-            <img src={showReference ? "./ab-1.png" : content.c1_img} className="w-full h-full object-cover" alt="" />
-            {isEditing && <label className="absolute inset-0 bg-black/60 flex items-center justify-center cursor-pointer"><input type="file" className="hidden" onChange={(e) => handleImageUpdate('c1_img', e)} /><HiOutlineUpload className="text-cyan-400" /></label>}
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <input disabled={!isEditing} name="c1_title" value={content.c1_title} onChange={handleChange} placeholder="Title" className="bg-transparent border-b border-gray-800 text-sm font-bold outline-none text-white focus:border-cyan-400" />
-            <textarea disabled={!isEditing} name="c1_desc" value={content.c1_desc} onChange={handleChange} placeholder="Desc" rows="2" className="bg-transparent border border-gray-800 rounded-lg p-2 text-[11px] outline-none text-gray-400" />
-            {/* <input disabled={!isEditing} name="c1_link" value={content.c1_link} onChange={handleChange} placeholder="Link" className="bg-transparent border border-gray-800 rounded-lg px-2 py-1 text-[10px] outline-none" /> */}
-          </div>
-        </div>
-
-        {/* CARD 2 */}
-        <div className={`bg-[#0b1318] border rounded-2xl p-5 flex gap-5 ${isEditing ? 'border-cyan-400/30' : 'border-gray-800'}`}>
-          <div className="relative w-28 h-28 flex-shrink-0 bg-black rounded-xl overflow-hidden group">
-            <img src={showReference ? "./ab-2.png" : content.c2_img} className="w-full h-full object-cover" alt="" />
-            {isEditing && <label className="absolute inset-0 bg-black/60 flex items-center justify-center cursor-pointer"><input type="file" className="hidden" onChange={(e) => handleImageUpdate('c2_img', e)} /><HiOutlineUpload className="text-cyan-400" /></label>}
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <input disabled={!isEditing} name="c2_title" value={content.c2_title} onChange={handleChange} placeholder="Title" className="bg-transparent border-b border-gray-800 text-sm font-bold outline-none text-white focus:border-cyan-400" />
-            <textarea disabled={!isEditing} name="c2_desc" value={content.c2_desc} onChange={handleChange} placeholder="Desc" rows="2" className="bg-transparent border border-gray-800 rounded-lg p-2 text-[11px] outline-none text-gray-400" />
-            {/* <input disabled={!isEditing} name="c2_link" value={content.c2_link} onChange={handleChange} placeholder="Link" className="bg-transparent border border-gray-800 rounded-lg px-2 py-1 text-[10px] outline-none" /> */}
-          </div>
-        </div>
-
-        {/* CARD 3 */}
-        <div className={`bg-[#0b1318] border rounded-2xl p-5 flex gap-5 ${isEditing ? 'border-cyan-400/30' : 'border-gray-800'}`}>
-          <div className="relative w-28 h-28 flex-shrink-0 bg-black rounded-xl overflow-hidden group">
-            <img src={showReference ? "./ab-3.png" : content.c3_img} className="w-full h-full object-cover" alt="" />
-            {isEditing && <label className="absolute inset-0 bg-black/60 flex items-center justify-center cursor-pointer"><input type="file" className="hidden" onChange={(e) => handleImageUpdate('c3_img', e)} /><HiOutlineUpload className="text-cyan-400" /></label>}
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <input disabled={!isEditing} name="c3_title" value={content.c3_title} onChange={handleChange} placeholder="Title" className="bg-transparent border-b border-gray-800 text-sm font-bold outline-none text-white focus:border-cyan-400" />
-            <textarea disabled={!isEditing} name="c3_desc" value={content.c3_desc} onChange={handleChange} placeholder="Desc" rows="2" className="bg-transparent border border-gray-800 rounded-lg p-2 text-[11px] outline-none text-gray-400" />
-            {/* <input disabled={!isEditing} name="c3_link" value={content.c3_link} onChange={handleChange} placeholder="Link" className="bg-transparent border border-gray-800 rounded-lg px-2 py-1 text-[10px] outline-none" /> */}
-          </div>
-        </div>
-
-        {/* CARD 4 */}
-        {/* <div className={`bg-[#0b1318] border rounded-2xl p-5 flex gap-5 ${isEditing ? 'border-cyan-400/30' : 'border-gray-800'}`}>
-          <div className="relative w-28 h-28 flex-shrink-0 bg-black rounded-xl overflow-hidden group">
-            <img src={showReference ? "/card-4.jpg" : content.c4_img} className="w-full h-full object-cover" alt="" />
-            {isEditing && <label className="absolute inset-0 bg-black/60 flex items-center justify-center cursor-pointer"><input type="file" className="hidden" onChange={(e) => handleImageUpdate('c4_img', e)} /><HiOutlineUpload className="text-cyan-400" /></label>}
-          </div>
-          <div className="flex flex-col gap-2 flex-1">
-            <input disabled={!isEditing} name="c4_title" value={content.c4_title} onChange={handleChange} placeholder="Title" className="bg-transparent border-b border-gray-800 text-sm font-bold outline-none text-white focus:border-cyan-400" />
-            <textarea disabled={!isEditing} name="c4_desc" value={content.c4_desc} onChange={handleChange} placeholder="Desc" rows="2" className="bg-transparent border border-gray-800 rounded-lg p-2 text-[11px] outline-none text-gray-400" />
-            <input disabled={!isEditing} name="c4_link" value={content.c4_link} onChange={handleChange} placeholder="Link" className="bg-transparent border border-gray-800 rounded-lg px-2 py-1 text-[10px] outline-none" />
-          </div>
-        </div> */}
-
-      </div>
-      </div>
     </div>
   );
 };

@@ -2,12 +2,19 @@ import React, { useState, useEffect } from "react";
 import SectionEditor from "../components/SectionEditor"; // The component created in the previous step
 import toast, { Toaster } from "react-hot-toast";
 import {
-  HiOutlineHome,
-  HiOutlineBriefcase,
-  HiOutlineViewGrid,
   HiOutlineDatabase,
   HiChevronDown,
   HiChevronRight,
+  HiOutlineHome,        // Homepage
+  HiOutlineUserGroup,   // About Us
+  HiOutlineViewGrid,    // Our Services
+  HiOutlineMail,        // Contact Us
+  HiOutlineBriefcase,   // Management
+  HiOutlinePlay,        // Stream
+  HiOutlineBookOpen,    // Books
+  HiOutlineShare,       // Connect
+  HiOutlineShieldCheck, // Verify
+  HiOutlineChartBar,    // Reporting
   HiOutlineUserCircle,
 } from "react-icons/hi";
 // 1. Import your custom section components
@@ -28,6 +35,11 @@ import ASupportCompany from "../section/service/ASupportCompany";
 import AllServices from "../section/service/AllServices";
 import StartYourJourney from "../section/contact/StartYourJourney";
 import ContactUs from "../section/contact/ContactUs";
+import AgencyManagement from "../section/management/AgencyManagement";
+import ServiceOverview from "../section/management/ServiceOverview";
+import WhatWeOffer from "../section/management/WhatWeOffer";
+import WhatWeProvide from "../section/management/WhatWeProvide";
+
 
 const Dashboard = () => {
   const [activePage, setActivePage] = useState("home");
@@ -157,6 +169,34 @@ const Dashboard = () => {
             onSave={handleUpdateSection}
           />
         );
+      case "Agency Management":
+        return (
+          <AgencyManagement
+            sectionData={activeSectionData}
+            onSave={handleUpdateSection}
+          />
+        );
+      case "Service Overview":
+        return (
+          <ServiceOverview
+            sectionData={activeSectionData}
+            onSave={handleUpdateSection}
+          />
+        );
+      case "What We Offer":
+        return (
+          <WhatWeOffer
+            sectionData={activeSectionData}
+            onSave={handleUpdateSection}
+          />
+        );
+      case "What We Provide":
+        return (
+          <WhatWeProvide
+            sectionData={activeSectionData}
+            onSave={handleUpdateSection}
+          />
+        );
       default:
         return (
           <div className="flex items-center justify-center h-full text-gray-500 border-2 border-dashed border-gray-800 rounded-3xl">
@@ -191,7 +231,7 @@ const Dashboard = () => {
               </h2>
             </div>
 
-            <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-4 px-2">
+            <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-2 px-2">
               Main Pages
             </p>
 
@@ -250,7 +290,7 @@ const Dashboard = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <HiOutlineHome className="text-xl" />
+                  <HiOutlineUserGroup className="text-xl" />
                   <span className="text-sm font-bold uppercase">About</span>
                 </div>
                 {openMenu === "about" ? <HiChevronDown /> : <HiChevronRight />}
@@ -295,7 +335,7 @@ const Dashboard = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <HiOutlineHome className="text-xl" />
+                  <HiOutlineViewGrid className="text-xl" />
                   <span className="text-sm font-bold uppercase">Service</span>
                 </div>
                 {openMenu === "service" ? <HiChevronDown /> : <HiChevronRight />}
@@ -337,7 +377,7 @@ const Dashboard = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <HiOutlineHome className="text-xl" />
+                  <HiOutlineMail className="text-xl" />
                   <span className="text-sm font-bold uppercase">Contact</span>
                 </div>
                 {openMenu === "contact" ? <HiChevronDown /> : <HiChevronRight />}
@@ -367,6 +407,10 @@ const Dashboard = () => {
               )}
             </div>
 
+ <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest mb-1 mt-5 px-2">
+              Service Details
+            </p>
+
             {/* Management Toggle */}
             <div className="mb-2">
               <button
@@ -378,7 +422,7 @@ const Dashboard = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <HiOutlineDatabase className="text-xl" />
+                  <HiOutlineBriefcase className="text-xl" />
                   <span className="text-sm font-bold uppercase">
                     Management
                   </span>
@@ -392,10 +436,10 @@ const Dashboard = () => {
               {openMenu === "management" && (
                 <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
                   {[
-                    "Hero",
-                    "Overview",
-                    "Provide",
-                    "Tvg Effect",
+                    "Agency Management",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
                     "Testimonials",
                   ].map((sec) => (
                     <button
@@ -407,6 +451,256 @@ const Dashboard = () => {
                       className={`text-left px-4 py-2 text-xs font-medium transition-all ${
                         activeId === sec &&
                         activePage === "services/tvg-management"
+                          ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
+                          : "text-gray-500 hover:text-white"
+                      }`}
+                    >
+                      {sec}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Stream Toggle */}
+            <div className="mb-2">
+              <button
+                onClick={() => toggle("stream")}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border ${
+                  activePage === "services/tvg-stream"
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                    : "text-gray-400 border-transparent"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <HiOutlinePlay className="text-xl" />
+                  <span className="text-sm font-bold uppercase">
+                    Stream
+                  </span>
+                </div>
+                {openMenu === "stream" ? (
+                  <HiChevronDown />
+                ) : (
+                  <HiChevronRight />
+                )}
+              </button>
+              {openMenu === "stream" && (
+                <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
+                  {[
+                    "Agency Stream",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
+                    "Testimonials",
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      onClick={() => {
+                        setActivePage("services/tvg-stream");
+                        setActiveId(sec);
+                      }}
+                      className={`text-left px-4 py-2 text-xs font-medium transition-all ${
+                        activeId === sec &&
+                        activePage === "services/tvg-stream"
+                          ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
+                          : "text-gray-500 hover:text-white"
+                      }`}
+                    >
+                      {sec}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Books Toggle */}
+            <div className="mb-2">
+              <button
+                onClick={() => toggle("books")}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border ${
+                  activePage === "services/tvg-books"
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                    : "text-gray-400 border-transparent"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <HiOutlineBookOpen className="text-xl" />
+                  <span className="text-sm font-bold uppercase">
+                    Books
+                  </span>
+                </div>
+                {openMenu === "books" ? (
+                  <HiChevronDown />
+                ) : (
+                  <HiChevronRight />
+                )}
+              </button>
+              {openMenu === "books" && (
+                <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
+                  {[
+                    "Agency Books",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
+                    "Testimonials",
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      onClick={() => {
+                        setActivePage("services/tvg-books");
+                        setActiveId(sec);
+                      }}
+                      className={`text-left px-4 py-2 text-xs font-medium transition-all ${
+                        activeId === sec &&
+                        activePage === "services/tvg-books"
+                          ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
+                          : "text-gray-500 hover:text-white"
+                      }`}
+                    >
+                      {sec}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Connect Toggle */}
+            <div className="mb-2">
+              <button
+                onClick={() => toggle("connect")}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border ${
+                  activePage === "services/tvg-connect"
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                    : "text-gray-400 border-transparent"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <HiOutlineShare className="text-xl" />
+                  <span className="text-sm font-bold uppercase">
+                    Connect
+                  </span>
+                </div>
+                {openMenu === "connect" ? (
+                  <HiChevronDown />
+                ) : (
+                  <HiChevronRight />
+                )}
+              </button>
+              {openMenu === "connect" && (
+                <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
+                  {[
+                    "Agency Connect",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
+                    "Testimonials",
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      onClick={() => {
+                        setActivePage("services/tvg-connect");
+                        setActiveId(sec);
+                      }}
+                      className={`text-left px-4 py-2 text-xs font-medium transition-all ${
+                        activeId === sec &&
+                        activePage === "services/tvg-connect"
+                          ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
+                          : "text-gray-500 hover:text-white"
+                      }`}
+                    >
+                      {sec}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Verify Toggle */}
+            <div className="mb-2">
+              <button
+                onClick={() => toggle("verify")}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border ${
+                  activePage === "services/tvg-verify"
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                    : "text-gray-400 border-transparent"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <HiOutlineShieldCheck className="text-xl" />
+                  <span className="text-sm font-bold uppercase">
+                    Verify
+                  </span>
+                </div>
+                {openMenu === "verify" ? (
+                  <HiChevronDown />
+                ) : (
+                  <HiChevronRight />
+                )}
+              </button>
+              {openMenu === "verify" && (
+                <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
+                  {[
+                    "Agency Verify",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
+                    "Testimonials",
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      onClick={() => {
+                        setActivePage("services/tvg-verify");
+                        setActiveId(sec);
+                      }}
+                      className={`text-left px-4 py-2 text-xs font-medium transition-all ${
+                        activeId === sec &&
+                        activePage === "services/tvg-verify"
+                          ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
+                          : "text-gray-500 hover:text-white"
+                      }`}
+                    >
+                      {sec}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Reporting Toggle */}
+            <div className="mb-2">
+              <button
+                onClick={() => toggle("reporting")}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border ${
+                  activePage === "services/tvg-reporting"
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+                    : "text-gray-400 border-transparent"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <HiOutlineChartBar className="text-xl" />
+                  <span className="text-sm font-bold uppercase">
+                    Reporting
+                  </span>
+                </div>
+                {openMenu === "reporting" ? (
+                  <HiChevronDown />
+                ) : (
+                  <HiChevronRight />
+                )}
+              </button>
+              {openMenu === "reporting" && (
+                <div className="ml-9 mt-2 flex flex-col gap-1 border-l border-gray-800">
+                  {[
+                    "Agency Reporting",
+                    "Service Overview",
+                    "What We Offer",
+                    "What We Provide",
+                    "Testimonials",
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      onClick={() => {
+                        setActivePage("services/tvg-reporting");
+                        setActiveId(sec);
+                      }}
+                      className={`text-left px-4 py-2 text-xs font-medium transition-all ${
+                        activeId === sec &&
+                        activePage === "services/tvg-reporting"
                           ? "text-cyan-400 border-l-2 border-cyan-400 -ml-[2px]"
                           : "text-gray-500 hover:text-white"
                       }`}
